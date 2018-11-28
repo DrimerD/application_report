@@ -64,6 +64,7 @@ canvas{
 #main-content form#control button[type=submit] {
     font-family: 'Source Sans Pro', sans-serif;
     border: 1px solid #D7DAE2;
+    background-color: #ffffff;
     height: 37px;
     padding: 0px 25px;
     margin-left: 10%;
@@ -99,6 +100,7 @@ canvas {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 800;
     border: 1px solid #D7DAE2;
+    background-color: #fff;
     height: 37px;
     padding: 0px 25px;
     margin-left: 10%;
@@ -185,4 +187,47 @@ canvas {
 .preview-container .preview-content .preview-content-row .source-prev .butt-orange {
     background-color: #FFCA83;
     border: 1px solid #FFCA83;
+}
+
+@media screen and (max-width: 1199px){
+    .preview-container .preview-content .preview-content-row,
+    .preview-container .preview-header {
+        grid-template-columns: 1fr minmax(140px, 10%) minmax(146px, 14%) minmax(240px, 12%) 1fr;
+    }
+}
+@media screen and (max-width: 991px){
+    .preview-container .preview-content .preview-content-row,
+    .preview-container .preview-header {
+        display: flex;
+        justify-content: space-around;
+    }
+    #main-content form#control button[type=submit] {
+        margin-left: 5px;
+    }
+    #main-content .fields-container {
+        width: 100%;
+    }
+    #main-content .fields-container>div {
+        margin-right: 5px;
+    }
+    #main-content form#control .select-container:after {
+        right: 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .preview-container .preview-content .preview-content-row .source-prev span {
+        width: 50px;
+    }
+    #main-content .fields-container {
+        flex-wrap: wrap;
+    }
+    #main-content form#control .select-container:after {
+        right: 20px;
+    }
+    #main-content form#control select {
+        margin-bottom: 10px;
+    }
+    canvas {
+        margin: 15px 0px;
+    }
 }
