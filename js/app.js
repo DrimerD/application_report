@@ -76,6 +76,21 @@ var chart = new Chart(ctx, {
 });
 
 jQuery(document).ready(function ($) {
+    $('input[name="daterange"]').daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+
+    $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+    });
+
+    $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+    });
+
     $('.preview-container .preview-content span.show-all').on("click", function (e) {
         e.preventDefault();
         if($(this).text() === "View more") {
