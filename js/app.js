@@ -1,4 +1,17 @@
 var ctx = document.getElementById('myChart').getContext('2d');
+
+var blue_gradient = ctx.createLinearGradient(10, 10,40, 300);
+blue_gradient.addColorStop(0, 'rgba(163, 161, 251,0.6)');
+blue_gradient.addColorStop(1, 'rgba(163, 161, 251,0.1)');
+
+var pink_gradient = ctx.createLinearGradient(10, 10,40, 300);
+pink_gradient.addColorStop(0, 'rgba(163, 161, 251,0.6)');
+pink_gradient.addColorStop(1, 'rgba(163, 161, 251,0.1)');
+
+var green_gradient = ctx.createLinearGradient(10, 10,40, 300);
+green_gradient.addColorStop(0, 'rgba(97, 226, 162,0.6)');
+green_gradient.addColorStop(1, 'rgba(163, 161, 251,0.1)');
+
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -6,17 +19,19 @@ var chart = new Chart(ctx, {
     // The data for our dataset
     data: {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
+        datasets: [
+            {
             label: "Leisure Jobs",
-            backgroundColor: 'rgba(163, 161, 251,0.6)',
+            backgroundColor: pink_gradient,
             borderColor: 'rgb(163, 161, 251)',
             pointBackgroundColor: "#fff",
+
             pointRadius: '4',
             data: [0, 10, 5, 2, 20, 30, 45],
         },
             {
                 label: "Gym Career",
-                backgroundColor: 'rgba(84, 216, 255,0.6)',
+                backgroundColor: blue_gradient,
                 borderColor: 'rgb(84, 216, 255)',
                 pointBackgroundColor: "#fff",
                 pointRadius: '4',
@@ -24,12 +39,13 @@ var chart = new Chart(ctx, {
             },
             {
                 label: "Indeed",
-                backgroundColor: 'rgba(97, 226, 162,0.6)',
+                backgroundColor: green_gradient,
                 borderColor: 'rgb(97, 226, 162)',
                 pointBackgroundColor: "#fff",
                 pointRadius: '4',
                 data: [35, 30, 25, 20, 15, 10, 5],
-            }],
+            }
+            ],
     },
 
     // Configuration options go here
